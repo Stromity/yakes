@@ -1,14 +1,18 @@
-plugins {
-    id 'java'
+allprojects {
+    group 'com.stromity.yakes'
+    version '1.0.0-SNAPSHOT'
+
+    apply plugin: 'java'
+    apply plugin: 'maven'
 }
 
-group 'com.stromity'
-version '1.0.0-SNAPSHOT'
+subprojects {
 
-repositories {
-    mavenCentral()
-}
+    repositories {
+        mavenCentral()
+    }
 
-dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+    dependencies {
+        testImplementation('junit:junit:4.12')
+    }
 }
