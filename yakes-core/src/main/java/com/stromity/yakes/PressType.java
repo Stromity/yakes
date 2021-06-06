@@ -17,5 +17,10 @@ public enum PressType {
     /**
      * Representing whenever the keys is being released.
      */
-    ON_RELEASE
+    ON_RELEASE,
+
+    /**
+     * Represents any type of key press (ON_PRESS, ON_HOLD & ON_RELEASE).
+     */
+    ANY
 }

@@ -106,7 +106,6 @@ public class MultiKeyKeyboardListener extends AbstractKeyboardListener<List<Stri
      */
     @Override
     public boolean shouldFire(List<String> keysPressed, PressType type) {
-        if (acceptedPressType != type) return false;
-        return boundKeys.containsKey(convertToString(keysPressed));
+        return isPressTypeAccepted(type) && boundKeys.containsKey(convertToString(keysPressed));
     }
 }

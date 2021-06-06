@@ -41,6 +41,11 @@ public abstract class AbstractKeyboardListener<T, C extends KeyboardPressCallbac
             PressType acceptedPressType) {
         this.boundKeys = boundKeys;
         this.acceptedPressType = acceptedPressType;
+
+
+        if (boundKeys == null || acceptedPressType == null) {
+            throw new NullPointerException("Neither Map or PressType can be null");
+        }
     }
 
     /**
@@ -107,5 +112,17 @@ public abstract class AbstractKeyboardListener<T, C extends KeyboardPressCallbac
         KeyboardPressCallbackProvider<T, C> provider = boundKeys.get(key);
         if (provider == null) return null;
         return provider.create();
+    }
+
+    /**
+     * Checks whether or not the given press type is accepted. The conditions is:
+     * pressType == acceptedPressType or acceptedPressType == PressType.ANY
+     *
+     * @param pressType the press type to check
+     * @return whether or not the press type is accepted.
+     */
+    protected boolean isPressTypeAccepted(PressType pressType) {
+        if (acceptedPressType == PressType.ANY) return true;
+        return acceptedPressType == pressType;
     }
 }

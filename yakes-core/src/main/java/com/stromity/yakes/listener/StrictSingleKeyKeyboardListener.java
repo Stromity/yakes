@@ -43,8 +43,7 @@ public class StrictSingleKeyKeyboardListener extends AbstractKeyboardListener<St
      */
     @Override
     public boolean shouldFire(List<String> keysPressed, PressType type) {
-        if (acceptedPressType != type) return false;
         if (keysPressed.size() > 1) return false;
-        return boundKeys.containsKey(keysPressed.get(0));
+        return isPressTypeAccepted(type) && boundKeys.containsKey(keysPressed.get(0));
     }
 }

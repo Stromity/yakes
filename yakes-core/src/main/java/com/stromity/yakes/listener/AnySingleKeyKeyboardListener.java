@@ -36,7 +36,7 @@ public class AnySingleKeyKeyboardListener extends AbstractKeyboardListener<Strin
 
     @Override
     public boolean shouldFire(List<String> keysPressed, PressType type) {
-        if (acceptedPressType != type) return false;
+        if (!isPressTypeAccepted(type)) return false;
 
         for (String key : keysPressed) {
             return boundKeys.containsKey(key);

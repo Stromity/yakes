@@ -13,7 +13,6 @@
             <option value="$PROJECT_DIR$/yakes-javafx" />
             <option value="$PROJECT_DIR$/yakes-lwjgl2" />
             <option value="$PROJECT_DIR$/yakes-lwjgl3" />
-            <option value="$PROJECT_DIR$/yakes-swift" />
             <option value="$PROJECT_DIR$/yakes-swing" />
           </set>
         </option>
