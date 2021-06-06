@@ -26,7 +26,7 @@ public class AnySingleKeyKeyboardListener extends AbstractKeyboardListener<Strin
     @Override
     public void fire(List<String> keys, PressType type) {
         for (String key : keys) {
-            KeyboardPressCallback.Single callback = provideEvent(key);
+            KeyboardPressCallback.Single callback = provideEventCallback(key);
 
             if (callback != null) {
                 callback.fire(key);

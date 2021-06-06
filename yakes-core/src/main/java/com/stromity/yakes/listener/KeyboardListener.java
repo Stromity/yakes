@@ -84,5 +84,5 @@ public interface KeyboardListener<T, C extends KeyboardPressCallback<T>> {
      *
      * @return the provided event.
      */
-    C provideEvent(String key);
+    C provideEventCallback(String key);
 }

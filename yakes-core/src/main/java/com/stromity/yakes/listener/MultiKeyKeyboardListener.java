@@ -64,7 +64,7 @@ public class MultiKeyKeyboardListener extends AbstractKeyboardListener<List<Stri
      */
     @Override
     public void fire(List<String> keys, PressType type) {
-        KeyboardPressCallback.Multi callback = provideEvent(convertToString(keys));
+        KeyboardPressCallback.Multi callback = provideEventCallback(convertToString(keys));
 
         if (callback != null) {
             callback.fire(keys);

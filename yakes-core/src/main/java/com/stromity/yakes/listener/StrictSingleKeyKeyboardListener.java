@@ -28,7 +28,7 @@ public class StrictSingleKeyKeyboardListener extends AbstractKeyboardListener<St
     @Override
     public void fire(List<String> keys, PressType type) {
         String key = keys.get(0); // only 1 key is being pressed.
-        KeyboardPressCallback.Single callback = provideEvent(key);
+        KeyboardPressCallback.Single callback = provideEventCallback(key);
 
         if (callback != null) {
             callback.fire(key);

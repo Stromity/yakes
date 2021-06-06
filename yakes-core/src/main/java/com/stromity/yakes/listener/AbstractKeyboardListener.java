@@ -108,7 +108,7 @@ public abstract class AbstractKeyboardListener<T, C extends KeyboardPressCallbac
      * @return the event corresponding to {@code key}.
      */
     @Override
-    public C provideEvent(String key) {
+    public C provideEventCallback(String key) {
         KeyboardPressCallbackProvider<T, C> provider = boundKeys.get(key);
         if (provider == null) return null;
         return provider.create();
