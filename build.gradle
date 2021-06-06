@@ -7,12 +7,15 @@ allprojects {
 }
 
 subprojects {
-
     repositories {
         mavenCentral()
     }
 
     dependencies {
+        if (project.name != "yakes-core") {
+            implementation(project(":yakes-core"))
+        }
+
         testImplementation('junit:junit:4.12')
     }
 }
